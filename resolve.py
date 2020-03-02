@@ -6,8 +6,6 @@ hosts = ['zencat','scee','pumpkin','juno','jarhead',
         'dixie', 'peach', 'peanut','debbie', 'blub',
         'omalley','Maui','daisy','milo','tweety', 'erica' ]
 
-#hosts = ['zencat','scee']
-
 local_dict = {}
 
 for host in hosts:
