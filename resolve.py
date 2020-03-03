@@ -24,8 +24,7 @@ def show_ips():
     return available_hosts
 
 def arpall():
-    output = subprocess.check_output(("arp", "-a"))
-    output = output.decode("utf-8")
+    output = subprocess.check_output(("arp", "-a")).decode("utf-8")
     return output
 
 if __name__ == "__main__":
