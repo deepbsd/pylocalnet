@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import socket
+import subprocess
 
 hosts = ['zencat','scee','pumpkin','juno','jarhead',
         'dixie', 'peach', 'peanut','debbie', 'blub',
@@ -21,6 +22,10 @@ def show_ips():
         available_hosts.append("{0}:   \t{1}".format(hostname,ip))
     return available_hosts
 
+def arpall():
+    hosts = subprocess.check_output(("arp", "-a"))
+    return hosts
 
 if __name__ == "__main__":
-    for line in show_ips(): print(line)
+    #for line in show_ips(): print(line)
+    print(arpall())
