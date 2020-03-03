@@ -9,14 +9,18 @@ hosts = ['zencat','scee','pumpkin','juno','jarhead',
 
 local_dict = {}
 
-for host in hosts:
-    try:
-        ip = socket.gethostbyname(str(host+'.lan'))
-    except:
-        ip = 'host not available'
-    local_dict[host] = ip
+def show_ips():
+    available_hosts = []
+    for host in hosts:
+        try:
+            ip = socket.gethostbyname(host+".lan")
+        except:
+            ip = 'host not available'
+        local_dict[host] = ip
+    for hostname, ip in local_dict.items():
+        available_hosts.append("{0}:   \t{1}".format(hostname,ip))
+    return available_hosts
 
-count=1
-for hostname, ip in local_dict.items():
-    print("{0}  {1}:   \t{2}".format(count, hostname, ip))
-    count+=1
+
+if __name__ == "__main__":
+    for line in show_ips(): print(line)
