@@ -4,12 +4,14 @@ import socket
 
 hosts = ['zencat','scee','pumpkin','juno','jarhead',
         'dixie', 'peach', 'peanut','debbie', 'blub',
-        'omalley','Maui','daisy','milo','tweety', 'erica' ]
+        'omalley','Maui','daisy','milo','tweety', 
+        'erica', 'kitty', 'jazzcat' ]
 
 local_dict = {}
 
 for host in hosts:
     try:
+        host = str(host+'.lan')
         ip = socket.gethostbyname(host)
     except:
         ip = 'host not available'
