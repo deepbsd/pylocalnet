@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import re
 import socket
 import subprocess
 
@@ -23,8 +24,10 @@ def show_ips():
     return available_hosts
 
 def arpall():
-    hosts = subprocess.check_output(("arp", "-a"))
-    return hosts
+    new_output = []
+    output = subprocess.check_output(("arp", "-a"))
+    output = output.decode("utf-8")
+    return output
 
 if __name__ == "__main__":
     #for line in show_ips(): print(line)
