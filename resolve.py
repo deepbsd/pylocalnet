@@ -16,5 +16,7 @@ for host in hosts:
         ip = 'host not available'
     local_dict[host] = ip
 
+count=1
 for hostname, ip in local_dict.items():
-    print("{0}:   \t{1}".format(hostname, ip))
+    print("{0}  {1}:   \t{2}".format(count, hostname, ip))
+    count+=1
