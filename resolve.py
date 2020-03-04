@@ -7,8 +7,9 @@ import subprocess
 
 hosts = ['zencat','scee','pumpkin','juno','jarhead',
         'dixie', 'peach', 'peanut','debbie', 'blub',
-        'omalley','Maui','daisy','milo','tweety', 
-        'erica', 'kitty', 'jazzcat', 'dolly' ]
+        'omalley','Maui','daisy','milo','tweety',
+        'erica', 'kitty', 'jazzcat', 'dolly',
+         'OfficeWinBox', 'amplifi']
 
 local_dict = {}
 
@@ -21,7 +22,7 @@ def show_ips():
             ip = 'host not available'
         local_dict[host] = ip
     for hostname, ip in local_dict.items():
-        available_hosts.append("{0}:   \t{1}".format(hostname,ip))
+        available_hosts.append("{0:15}\t{1}".format(hostname,ip))
     return available_hosts
 
 def arpall():
