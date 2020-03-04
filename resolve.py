@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import re
 import socket
 import subprocess
@@ -28,5 +29,11 @@ def arpall():
     return output
 
 if __name__ == "__main__":
-    #for line in show_ips(): print(line)
-    print(arpall())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-a", "--arp", help="arp local subnet and return all devices on local network", action="store_true")
+    args =  parser.parse_args()
+    if args.arp:
+        print("Showing results from localnet ARP...")
+        print(arpall())
+    else:
+        for line in show_ips(): print(line)
