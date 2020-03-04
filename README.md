@@ -8,6 +8,7 @@ me eventually whether a box is up or down.
 # Arguments
 
 There are two arguments:  `'-h' for *help*  and '-a' for *arp*
+
 '-a' will arp the local subnet and show the available hosts.  If a hostname
 cannot be resolved a '?' will replace the hostname
 `
