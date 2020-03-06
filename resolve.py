@@ -25,7 +25,10 @@ def show_ips():
     return available_hosts
 
 def arpall():
-    output = subprocess.check_output(("arp", "-a")).decode("utf-8")
+    try:
+        output = subprocess.check_output(("arp", "-a")).decode("utf-8")
+    except:
+        output="Error:  Arp command not available on this host..."
     return output
 
 if __name__ == "__main__":
